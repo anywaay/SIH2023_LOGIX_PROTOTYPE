@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon2.ico">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/6cd0737a04.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+  
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <!-- google fonts -->
+  
+  
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="css/product_details.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+    
+            <a class="navbar-brand" href=" ">SavvyShopper</a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        <div class="navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#comparison-section">Comparison</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">Contact Us</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" id="Accountid" href="/login"> <i id="accountIcon" class= " <%= accounticon %> " > </i> <%= accountname %></a>
+              </li>
+            </ul>
+        </div>
+        </nav>
+
+        <h2 id="heading">Price and Details of Searched Product</h2>
+        <hr>
+    <section id="product">
+        <div class="product-image">
+            <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active " aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src=" <%= proImage1 %> " class="d-block w-100" alt="Product Images">
+                    
+                  </div>
+                  <div class="carousel-item">
+                    <img src=" <%= proImage2 %>" class="d-block w-100" alt="Product Images">
+                  </div>
+                  <div class="carousel-item">
+                    <img src=" <%= proImage3 %>" class="d-block w-100" alt="Product Images">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon changeicon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon changeicon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="product_details">
+                <h2 id="pro-head">Product Details</h2>
+                <hr id="pro-hr">
+
+                <div class="detail-container">
+                    <div class="items detail-tag">Price For :</div>
+                    <div class="items detail-info"><%= pro_Pricefor %></div>
+                    <div class="items detail-tag">Offer Price/Unit:</div>
+                    <div class="items detail-info"> <%= proPrice %></div>
+                    <div class="items detail-tag">Availability:</div>
+                    <div class="items detail-info"><i class="fa-solid fa-circle-check correct"></i> <%= proStock %> </div>
+                    <div class="items detail-tag">Min. Qty. Per Consignee:</div>
+                    <div class="items detail-info"><%= proMinqty %></div>
+                    <div class="items detail-tag">Product id:</div>
+                    <div class="items detail-info"> <%= proId %> </div>
+                    <div class="items detail-tag">Country Of Origin:</div>
+                    <div class="items detail-info"> <%= proOrigin %> </div>
+                </div>
+            </div>
+
+            <div class="product_details">
+                <h2 id="pro-head">Seller Details</h2>
+                <hr id="pro-hr">
+
+                <div class="detail-container">
+                    <div class="items detail-tag">Sold by:</div>
+                    <div class="items detail-info"> <%= proSellertype  %></div>
+                    <div class="items detail-tag"> Seller Status: </div>
+                    <div class="items detail-info"><i class="fa-solid fa-circle-check correct"></i> <%= proSellervari %> </div>
+                    <div class="items detail-tag">Seller Excellence</div>
+                    <div class="items detail-info"> 
+                        <div class="seller-rating">
+                          <%= proRating %> <i class=" star fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="items detail-tag">Seller Details: </div>
+                    <div class="items detail-info"> <a id="sellerlink" href=" <%= sellerLink %> ">VIEW ALL SELLERS</a> </div>
+                    <!-- <div class="items detail-info"> <a id="sellerlink" href="/sellerdetails">VIEW ALL SELLERS</a> </div> -->
+                </div>
+            </div>
+
+            <div class="product_details">
+                <h2 id="pro-head">Specifications</h2>
+                <hr id="pro-hr">
+
+                <div class="detail-container">
+                    <div class="items detail-tag">Processor Description</div>
+                    <div class="items detail-info"><%= proProcessordesc %> </div>
+                    <div class="items detail-tag">Graphic Card: </div>
+                    <div class="items detail-info"> <%= proGraphictype %> <%= proGraphicdesc %> </div>
+                    <div class="items detail-tag">Operating System</div>
+                    <div class="items detail-info"> <%= proOperatingsys %> </div>
+                    <div class="items detail-tag">RAM Size(GB)</div>
+                    <div class="items detail-info"> <%= proRamsize %></div>
+                    <div class="items detail-tag">HDD Capacity(GB)</div>
+                    <div class="items detail-info"><%= proHddsize %></div>
+                    <div class="items detail-tag">SSD Capacity(GB)</div>
+                    <div class="items detail-info"> <%= proSsdsize %></div>
+                    <div class="items detail-tag">Display Size (Inch)</div>
+                    <div class="items detail-info"> <%= proDisplay %></div>
+                    <div class="items detail-tag">On Site OEM Warranty (Years)</div>
+                    <div class="items detail-info"> <%= proWarranty %> </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="product-desc">
+            <h2 id="productname"><%= proName %> </h2>
+            <h3 id="extradesc"><%= proModel %> </h3>
+            <h3 id="extrabrand"> Brand: <%= proBrand %></h3>
+            <h3 id="price"> <%= proPrice %> </h3>
+
+            <div class="price-comparison">
+                <h3 id="price-title">Price on different E-MarketPlaces</h3>
+                <div class="price-on-gem least-price">
+                    <h2 id="gem-heading"> <%= proName %></h2>
+                    <div class="gem-detail">
+                        <h2 id="gem-price"> <%= proPrice %> </h2>
+                        <img id="gem-logo" src="images/gem.png" alt="Gem Image">
+                        <form action="/gemvisit" method="post">
+                        <button type="submit" class="btn btn-outline-danger">Visit GeM</button>
+                      </form>
+                    </div>
+                </div>
+                <div class="price-on-gem">
+                  <h2 id="gem-heading"> <%= flipTitle %></h2>
+                  <div class="gem-detail">
+                      <h2 id="gem-price"> <%= FlipPrice %> </h2>
+                      <img id="gem-logo" src="images/flipkart.png" alt="Gem Image">
+                      <form action="/flipkartvisit" method="post">
+                      <button type="submit" class="btn btn-outline-danger">Visit Flipkart</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="price-on-gem">
+                    <h2 id="gem-heading"> <%= ebayName %> </h2>
+                    <div class="gem-detail">
+                        <h2 id="gem-price"> ₹ <%= ebayPrice %> </h2>
+                        <img id="gem-logo" src="images/ebay.png" alt="AmazonImage">
+                        <form action="/ebayvisit" method="post">
+                        <button type="submit" class="btn btn-outline-danger">Visit eBay</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="pro-graph">
+                <h3 id="graph-heading">Product Price Variation</h3>
+                <img id="graph-pic" src="images/graphh.jpg" alt="Graph">
+            </div>
+
+        </div>
+    </section>  
+    
+<!-- Comparison -->
+  <%  if( laptopTrue == true){   %>
+
+
+
+    <section id="comparison-section">
+        <div class="comparison-title">
+            Comparison of Your Product with Similar Items
+        </div>
+        <table class="table table-light table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Websites</th>
+                <!-- <th scope="col"> <img src="images/amazon.png" alt="logo">Amazon</th>
+                <th scope="col"><img src="images/gem.png" alt="logo">GeM</th>
+                <th scope="col"><img src="images/flipkart.png" alt="logo"> Flipkart</th> -->
+                <th scope="col">Flipkart</th>
+                <th scope="col">GeM</th>
+                <th scope="col">eBay</th>
+                <th scope="col"> alibaba</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Price</th>
+                <td id="price-tag"> <%=  FlipPrice%></td>
+                <td id="price-tag"><%= proPrice %></td>
+                <td id="price-tag">₹ 57,899</td>
+                <td id="price-tag">₹ 58,949</td>
+              </tr>
+              <tr>
+                <th scope="row">Customer Ratings</th>
+                <!-- <td id="star-rating">4.3 <i class="ratingstar star fa-solid fa-star"></td> -->
+                <td id="star-rating"> N/A </td>
+                <td id="star-rating"> <%= proRating %>  <i class="ratingstar star fa-solid fa-star"></td>
+                <td id="star-rating">3.7 <i class="ratingstar star fa-solid fa-star"></td>
+                <td id="star-rating"> N/A</td>
+              </tr> 
+              <tr>
+                <th scope="row">Processor</th>
+                <td> <%= flipproBrand %> <%= flipproName %> <%= flipproGen %></td>
+                <td> <%= proProcessordesc %></td>
+                <td>Intel Core i7 1150P</td>
+                <td> Intel Core i5 1240H</td>
+              </tr>
+              <tr>
+                <th scope="row">RAM</th>
+                <td> <%= flipramSize %> <%= flipramType %></td>
+                <td><%= proRamsize %> GB <%= proRamtype %></td>
+                <td>16 GB DDR4</td>
+                <td> 16 GB DDR4</td>
+              </tr>
+              <tr>
+                <th scope="row">Display</th>
+                <td> <%= flipscreenSize %> <%= flipscreenPixel %></td>
+                <td> <%= proDisplay %> Inch  <%= proDisplayreso %></td>
+                <td>15.3 Inch</td>
+                <td>16.1 Inch</td>
+              </tr>
+              <tr>
+                <th scope="row">SSD Size</th>
+                <td> <%= flipssdSize %></td>
+                <td> <%= proSsdsize %> GB </td>
+                <td> 1024 GB</td>
+                <td>512 GB</td>
+              </tr>
+              <tr>
+                <th scope="row">Hard Disk Size</th>
+                <td> N/A </td>
+                <td> <%= proHddsize %> GB </td>
+                <td>N/A</td>
+                <td>512 GB</td>
+              </tr>
+              <tr>
+                <th scope="row">Graphic Card</th>
+                <td> <%= flipGraphics %> </td>
+                <td><%= proGraphictype %> <%= proGraphicdesc %></td>
+                <td>Nvidia RTX 1750 RX</td>
+                <td>AMD Radeon 3040</td>
+              </tr>
+              <tr>
+                <th scope="row">Warranty years</th>
+                <td> <%= flipWarranty %> </td>
+                <td> <%= proWarranty %> Years</td>
+                <td> 2 Years</td>
+                <td>3 Years</td>
+              </tr>
+        
+            </tbody>
+          </table>
+    </section>
+
+ <% } %>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <h5>&copy; 2023 ShavvyShopper, Inc. All rights reserved.</h5>
+                    <div class="row">
+                        <div class="col-4">
+                            <ul class="list-unstyled">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/#testimonials">Reviews</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul class="list-unstyled">
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/#pricing">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                          <ul class="list-unstyled">
+                              <li><a href="/#e-tender-sites">E-Tender Sites</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                    <br>
+                </div>
+  
+                <div class="col-md-5">
+                  <h5 class="text-md-right">Contact Us</h5>
+                    <form>
+                      <p>Message Your query at our mail below and directly contact us at <a href="mailto:shavvyshopper@gmail.com">Shavvyshopper@gmail.com</a>.</p>
+                    </form>
+                </div>
+                <ul class="nav social-icon border-bottom">
+                  <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-brands fa-linkedin"></i></a></li>
+                  <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+                  <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+                  <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+              </ul>
+            </div>
+        </div>
+    </footer>
+  
+</body>
+</html>

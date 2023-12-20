@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>SavvyShopper</title>
+    <link rel="icon" href="images/favicon2.ico" />
+    <!-- FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/6cd0737a04.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts -->
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script>
+      function checkAndSubmit(type) {
+        var nameInput = document.getElementById("searchName");
+  
+        if (type === "name" && nameInput.value.trim() === "") {
+          alert("Please enter a product name before searching by name.");
+        } else {
+          var form = (type === "name") ? document.getElementById("nameForm") : document.getElementById("linkForm");
+          form.submit();
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href=" ">SavvyShopper</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#e-tender-sites">E-Tender Sites</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/sellerdetails">Seller Details</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" id="Accountid" href="/login">
+              <i id="accountIcon" class="<%= accounticon %>"> </i> <%= accountname %></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="title" style="background-image: url('images/main_background.jpg');">
+      <div class="container-fluid">
+      
+        <!-- Title -->
+
+        <div class="row searchbox">
+          <div class="col-lg-7">
+            <!-- style="text-align: right;" -->
+            <form id="nameForm" class="d-flex search-form" role="search" method="post" action="/searching#pricing">
+              <input
+                id="searchName"
+                class="form-control me-2 searchbar"
+                type="search"
+                placeholder="Enter Product Name"
+                aria-label="Search"
+                name="searchValue"
+              />
+              <button
+                class="btn btn-outline-light submit"
+                type="button"
+                onclick="checkAndSubmit('name')"
+              >
+                Compare Details
+              </button>
+            </form>
+          </div>
+          <div class="col-lg-10">
+            <!-- <h1>Compare price of items and get it at best price!</h1> -->
+            <h1>Discover deals by comparing price and grab items at best possible rate!</h1>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+
+    <section id="pricing">
+      <h2 id="price"> <%= searchingtitle %> </h2>
+      <p>  Simple and affordable price plans for your product on different Sites </p>
+      <div class="product-container">
+        <div class="row">
+
+          <% if (cards.length >= 1) { %>
+            <% cards.forEach(function (card, index) { %>
+          
+              <div class="col-lg-6 product-card">
+                <div class="card">
+                  <div class="img-price">
+                    <div class="img-div">
+                      <img id="card-image" src="<%= card.image %>" class="d-block w-100" alt="Product Images">
+                    </div>
+                      <h3 id="pro-brand"><%= card.Brand %></h3>
+                      <div class="seller-type">Sold by: <%= card.sellerType %></div>
+                      <div class="consignee-qty"><%= card.minQuantity %></div>
+                      <form action="/product<%= index + 1 %>" method="post">
+                        <button id="pro-butt" type="submit" class="btn btn-outline-danger">Compare Details</button>
+                      </form>
+                  </div>
+                  <div class="card-desc">
+                    <h2 id="product-heading"><%= card.ProductName %></h2>
+                    <div class="pro-price">
+                      <div class="main-div">
+                        <h4 id="idds"> GeM  <img id="iddds" src="images/gem.png" alt=""></h4>
+                          <div class="pro-div">
+                            <div class="items">Price: <%= card.Price %></div>
+                            <div class="items">Rating: <%= card.Rating %><i class="star fa-solid fa-star"></i> </div>
+                          </div>
+                      </div>
+                    <div class="main-div">
+                      <h4 id="idds"> Flipkart  <img id="iddds-flip" src="images/flipkart.png" alt=""></h4>
+                      <div class="pro-div">
+                      <div class="items">Price: <%= flipArr[index] %></div>
+                      <div class="items">Rating: <%= flipRatingarr[index] %><i class="star fa-solid fa-star"></i> </div>
+                    </div>
+                    </div>
+                    <div class="main-div">
+                      <h4 id="idds"> eBay <img id="iddds-ebay" src="images/ebay.png" alt=""></h4>
+                      <div class="pro-div">
+                        <div class="items">Price: ₹ <%= ebayArr[index] %></div>
+                        <div class="items">Rating: <%= ebayRatingarr[index] %><i class="star fa-solid fa-star"></i></div>
+                      </div>
+                    </div>
+                  </div>     
+                </div>
+              </div>
+              </div>
+            <% }); %>
+          <% } else if (cards.length === 0) { %>
+            <% if (Flagg === 1) { %>
+              <h2 id="notfound">Product Not found</h2>
+            <% } %>
+          <% } %>
+
+        </div>
+      </div>
+    </section>
+
+    <hr />
+    <!-- New Product Card -->
+
+    <!-- Features -->
+
+    <section id="features">
+      <div class="row">
+        <div class="feature-box col-lg-4">
+          <i class="fa-solid fa-circle-check fa-4x symbol"></i>
+          <h3>Accurate</h3>
+          <p>
+            we Check the Product Information in real time and provide you with
+            real data.
+          </p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="fa-sharp fa-solid fa-indian-rupee-sign fa-4x symbol"></i>
+          <h3>Best Price</h3>
+          <p>
+            We provide you best price for your product by comparing its price on
+            all sites.
+          </p>
+        </div>
+
+        <div class="feature-box col-lg-4">
+          <i class="fa-solid fa-bullseye fa-4x symbol"></i>
+          <h3>Easy to use</h3>
+          <p>
+            So easy to use, just enter the Product information and compare its
+            price.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Press -->
+
+    <section id="e-tender-sites">
+      <h2 id="partners">Our E-Commerce Partners :</h2>
+      <div class="brands">
+        <a href="https://www.flipkart.com"
+          ><img
+            class="press-logo"
+            src="images/flipkart.png"
+            alt="flipkart-logo"
+        /></a>
+        <a href="https://www.amazon.in"
+          ><img class="press-logo" src="images/amazon.png" alt="amazon-logo"
+        /></a>
+        <a href="https://gem.gov.in"
+          ><img class="press-logo" src="images/gem.png" alt="gem-portal-logo"
+        /></a>
+        <a href="https://www.reliancedigital.in"
+          ><img
+            class="press-logo"
+            src="images/reliance.png"
+            alt="reliance-digital-logo"
+        /></a>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+
+    <section id="testimonials" style="background-image: url('images/marketplace.jpg')">
+      <!-- <section id="testimonials"> -->
+      <div
+        id="carouselExampleInterval"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item testimonial-div active" data-bs-interval="3500">
+            <h2 class="testimonial-text">
+              I purchase products which i needed at lowest price possible
+              through this Website! <br />Thanks SavvyShopper
+            </h2>
+            <img
+              class="testimonial-image"
+              src="images/anyway.png"
+              alt="Anyway-img"
+            />
+            <em>Anyway, New Delhi</em>
+          </div>
+          <div class="carousel-item testimonial-div" data-bs-interval="3500">
+            <h2 class="testimonial-text">
+              Got the product with more add-ons offered by different e-commerce
+              Sites through comparing them here! <br />Thanks SavvyShopper
+            </h2>
+            <img
+              class="testimonial-image"
+              src="images/agastya.png"
+              alt="Agastya-img"
+            />
+            <em>Agastya, Banglore</em>
+          </div>
+          <div class="carousel-item testimonial-div" data-bs-interval="3500">
+            <h2 class="testimonial-text">
+              This site Provides me with the best comparison of products of my
+              need! <br />
+              Thanks SavvyShopper
+            </h2>
+            <img
+              class="testimonial-image"
+              src="images/ankur.png"
+              alt="Ankur-img"
+            />
+            <em>Ankur, Rae-Bareli</em>
+          </div>
+          <div class="carousel-item testimonial-div" data-bs-interval="3500">
+            <h2 class="testimonial-text">
+              Got the best deals on product i needed to buy and with so much
+              add-ons! <br />Thanks SavvyShopper
+            </h2>
+            <img
+              class="testimonial-image"
+              src="images/ishika .png"
+              alt="Ishika-img"
+            />
+            <em>Ishika, Jais</em>
+          </div>
+          <div class="carousel-item testimonial-div" data-bs-interval="3500">
+            <h2 class="testimonial-text">
+              Used this site for buying goods and got it so much user friendly
+              and best visual ever! <br />Thanks SavvyShopper
+            </h2>
+            <img
+              class="testimonial-image"
+              src="images/raksha.png"
+              alt="Raksha-img"
+            />
+            <em>Raksha, Banglore</em>
+          </div>
+          <div class="carousel-item testimonial-div" data-bs-interval="3500">
+            <h2 class="testimonial-text">
+              You can buy whatever needed through comparing their prices here
+              and get the best deal! <br />Thanks SavvyShopper
+            </h2>
+            <img
+              class="testimonial-image"
+              src="images/rishabh.png"
+              alt="Rishabh-img"
+            />
+            <em>Rishabh, New Delhi</em>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- <div class="social">
+        <div class="contact">Contact Us:</div>
+        <div class="linkedin">
+          <img class="social-img" src="Images/linkedin.png" alt="" />
+          <a
+            class="footer-link"
+            href="https://www.linkedin.com/in/ayush-tripathi-b17250257"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="github">
+          <img class="social-img" src="Images/githubb.png" alt="" />
+          <a class="footer-link" href="https://github.com/anywaay">Github</a>
+        </div>
+        <div class="insta">
+          <img class="social-img" src="Images/insta.png" alt="" />
+          <a
+            class="footer-link"
+            href="https://instagram.com/a.nywaay?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"
+            >Instagram</a
+          >
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          © 2023 Copyright @SavvyShopper <br />
+          Proudly Made in India <i class="heart fa-solid fa-heart"></i>
+        </p>
+      </div> -->
+  </section>
+
+    <section id="chatbot">
+      <p class="chat-text">Ask Savvy ?..............</p>
+      <a href=""
+        ><img class="chatbott" src="images/chatbit.jpg" alt="Chatbot"
+      /></a>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-5">
+                  <h5>&copy; 2023 SavvyShopper, Inc. All rights reserved.</h5>
+                  <div class="row">
+                      <div class="col-4">
+                          <ul class="list-unstyled">
+                              <li><a href="/">Home</a></li>
+                              <li><a href="/#testimonials">Reviews</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-4">
+                          <ul class="list-unstyled">
+                              <li><a href="/about">About Us</a></li>
+                              <li><a href="/#pricing">Pricing</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-4">
+                        <ul class="list-unstyled">
+                            <li><a href="/#e-tender-sites">E-Tender Sites</a></li>
+                        </ul>
+                    </div>
+                  </div>
+                  <br>
+              </div>
+
+              <div class="col-md-5">
+                <h5 class="text-md-right">Contact Us</h5>
+                  <form>
+                    <p>Message Your query at our mail below and directly contact us at <a href="mailto:savvyshopper@gmail.com">Savvyshopper@gmail.com</a>.</p>
+                  </form>
+              </div>
+              <ul class="nav social-icon border-bottom">
+                <li class="nav-item"><a href="https://www.linkedin.com/in/ayush-tripathi-b17250257" class="nav-link pl-0"><i class="fa fa-brands fa-linkedin"></i></a></li>
+                <li class="nav-item"><a href="https://github.com/anywaay" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+                <li class="nav-item"><a href="https://github.com/anywaay" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+                <li class="nav-item"><a href="https://github.com/anywaay" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+            </ul>
+          </div>
+      </div>
+  </footer>
+
+  </body>
+</html>

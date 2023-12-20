@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>SavvyShopper</title>
+  <link rel="icon" href="images/favicon2.ico">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/6cd0737a04.js" crossorigin="anonymous"></script>
+  <!-- FontAwesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <!-- google fonts -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
+
+.footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 300px;
+}
+
+/* Taller footer on small screens */
+@media (max-width: 567em) {
+    body {
+      margin-bottom: 10%;
+    }
+    .footer {
+      height: 35%;
+    }
+}
+
+/* Sticky footer style and color
+-------------------------------------------------- */
+footer {
+  padding-top: 30px;
+  background-color: #292c2f;
+  color: #bbb;
+}
+
+footer a {
+  color: #999;
+  text-decoration:none;
+}
+
+footer a:hover, footer a:focus {
+  color: #aaa;
+  text-decoration:none;
+  border-bottom:1px dotted #999;
+}
+
+footer .form-control {
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border: none;
+    resize: none;
+    color: #d1d2d2;
+    padding: 0.7em 1em;
+}
+  </style>
+</head>
+<body>
+  <table class="table  table-light table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Websites</th>
+        <th scope="col">Amazon</th>
+        <th scope="col">GeM</th>
+        <th scope="col">Flipkart</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Price</th>
+        <td>₹74,990</td>
+        <td>₹25,459</td>
+        <td>₹57,899</td>
+      </tr>
+      <tr>
+        <th scope="row">Customer Ratings</th>
+        <td>4.3 <i class=" star fa-solid fa-star"></td>
+        <td>4.0 - 4.5 <i class=" star fa-solid fa-star"></td>
+        <td>3.7 <i class=" star fa-solid fa-star"></td>
+      </tr>
+      <tr>
+        <th scope="row">Processor</th>
+        <td>Intel Core i5 1730U</td>
+        <td>Intel Core i7 1255U</td>
+        <td>Intel Core i7 1150P</td>
+      </tr>
+      <tr>
+        <th scope="row">RAM</th>
+        <td>16 GB DDR3</td>
+        <td>16 GB DDR4</td>
+        <td>16 GB DDR4</td>
+      </tr>
+      <tr>
+        <th scope="row">Display</th>
+        <td>15.7 inches</td>
+        <td>15.6 inches</td>
+        <td>15.3 inches</td>
+      </tr>
+      <tr>
+        <th scope="row">SSD Size</th>
+        <td>15.7 inches</td>
+        <td>15.6 inches</td>
+        <td>15.3 inches</td>
+      </tr>
+      <tr>
+        <th scope="row">Hard Disk Size</th>
+        <td>512 GB </td>
+        <td>NA</td>
+        <td>NA</td>
+      </tr>
+      <tr>
+        <th scope="row">Graphic Card</th>
+        <td>Nvidia RTX 3050 TI</td>
+        <td>NA</td>
+        <td>Nvidia RTX 1750 RX</td>
+      </tr>
+      <tr>
+        <th scope="row">Warranty years</th>
+        <td> 2 Years</td>
+        <td> 1 Years</td>
+        <td> 2 Years</td>
+      </tr>
+
+    </tbody>
+  </table>
+</body>
+</html>
+
+          <!-- <div class="col-lg-6 product-card">
+            <div class="card">
+              <div class="img-price">
+                <div class="img-div">
+                  <img id="card-image"src=" <%= imgsrc1 %> " class="d-block w-100" alt="Product Images">
+                </div>
+                <div class="pro-price">
+                  <div class="items">GeM Price: <%= gemprice1 %></div>
+                  <div class="items">Amazon Price: ₹154,899</div>
+                  <div class="items">Flipkart Price: ₹144,999</div>
+                </div>
+              </div>
+              <div class="card-desc">
+                <h2 id="product-heading">
+                  <%= prohead1 %>
+                </h2>
+                <h3 id="pro-brand"> <%= probrand1 %></h3>
+                <div class="seller-type"> Sold by: <%= proseller1 %></div>
+                <div class="rating"> <%= prorating1 %><i class=" star fa-solid fa-star"></i></div>
+                <div class="consignee-qty"><%= minqty1 %></div>
+                <form action="/product1" method="post">
+                <button id="pro-butt" type="submit" class="btn btn-outline-danger">Compare Details</button>
+              </form>
+              </div>     
+            </div>
+          </div>
+          <div class="col-lg-6 product-card">
+            <div class="card">
+              <div class="img-price">
+                <div class="img-div">
+                  <img id="card-image"src=" <%= imgsrc2 %> " class="d-block w-100" alt="Product Images">
+                </div>
+                <div class="pro-price">
+                  <div class="items">GeM Price: <%= gemprice2 %></div>
+                  <div class="items">Amazon Price: ₹154,899</div>
+                  <div class="items">Flipkart Price: ₹144,999</div>
+                </div>
+              </div>
+              <div class="card-desc">
+                <h2 id="product-heading">
+                  <%= prohead2 %>
+                </h2>
+                <h3 id="pro-brand"> <%= probrand2 %> </h3>
+                <div class="seller-type"> Sold by: <%= proseller2 %> </div>
+                <div class="rating"> <%= prorating2 %> <i class=" star fa-solid fa-star"></i></div>
+                <div class="consignee-qty"><%= minqty2 %> </div>
+                <form action="/product1" method="post">
+                <button id="pro-butt" type="submit" class="btn btn-outline-danger">Compare Details</button>
+              </form>
+              </div>     
+            </div>
+          </div>
+          <div class="col-lg-6 product-card">
+            <div class="card">
+              <div class="img-price">
+                <div class="img-div">
+                  <img id="card-image"src=" <%= imgsrc3 %> " class="d-block w-100" alt="Product Images">
+                </div>
+                <div class="pro-price">
+                  <div class="items">GeM Price: <%= gemprice3 %> </div>
+                  <div class="items">Amazon Price: ₹154,899</div>
+                  <div class="items">Flipkart Price: ₹144,999</div>
+                </div>
+              </div>
+              <div class="card-desc">
+                <h2 id="product-heading">
+                  <%= prohead3 %>
+                </h2>
+                <h3 id="pro-brand"> <%= probrand3 %> </h3>
+                <div class="seller-type"> Sold by: <%= proseller3 %> </div>
+                <div class="rating"> <%= prorating3 %> <i class=" star fa-solid fa-star"></i></div>
+                <div class="consignee-qty"><%= minqty3 %> </div>
+                <form action="/product1" method="post">
+                <button id="pro-butt" type="submit" class="btn btn-outline-danger">Compare Details</button>
+              </form>
+              </div>     
+            </div>
+          </div>
+          <div class="col-lg-6 product-card">
+            <div class="card">
+              <div class="img-price">
+                <div class="img-div">
+                  <img id="card-image"src=" <%= imgsrc4 %> " class="d-block w-100" alt="Product Images">
+                </div>
+                <div class="pro-price">
+                  <div class="items">GeM Price: <%= gemprice4 %> </div>
+                  <div class="items">Amazon Price: ₹154,899</div>
+                  <div class="items">Flipkart Price: ₹144,999</div>
+                </div>
+              </div>
+              <div class="card-desc">
+                <h2 id="product-heading">
+                  <%= prohead4 %>
+                </h2>
+                <h3 id="pro-brand"> <%= probrand4 %> </h3>
+                <div class="seller-type"> Sold by: <%= proseller4 %> </div>
+                <div class="rating"> <%= prorating4 %> <i class=" star fa-solid fa-star"></i></div>
+                <div class="consignee-qty"><%= minqty4 %> </div>
+                <form action="/product1" method="post">
+                <button id="pro-butt" type="submit" class="btn btn-outline-danger">Compare Details</button>
+              </form>
+              </div>     
+            </div>
+          </div>
+          <div class="col-lg-6 product-card">
+            <div class="card">
+              <div class="img-price">
+                <div class="img-div">
+                  <img id="card-image"src=" <%= imgsrc5 %> " class="d-block w-100" alt="Product Images">
+                </div>
+                <div class="pro-price">
+                  <div class="items">GeM Price: <%= gemprice5 %> </div>
+                  <div class="items">Amazon Price: ₹154,899</div>
+                  <div class="items">Flipkart Price: ₹144,999</div>
+                </div>
+              </div>
+              <div class="card-desc">
+                <h2 id="product-heading">
+                  <%= prohead5 %>
+                </h2>
+                <h3 id="pro-brand"> <%= probrand5 %> </h3>
+                <div class="seller-type">Sold by: <%= proseller5 %> </div>
+                <div class="rating"> <%= prorating5 %> <i class=" star fa-solid fa-star"></i></div>
+                <div class="consignee-qty"><%= minqty5 %> </div>
+                <form action="/product1" method="post">
+                <button id="pro-butt" type="submit" class="btn btn-outline-danger">Compare Details</button>
+              </form>
+              </div>     
+            </div>
+          </div>
+          <div class="col-lg-6 product-card">
+            <div class="card">
+              <div class="img-price">
+                <div class="img-div">
+                  <img id="card-image"src=" <%= imgsrc6 %> " class="d-block w-100" alt="Product Images">
+                </div>
+                <div class="pro-price">
+                  <div class="items">GeM Price: <%= gemprice6 %> </div>
+                  <div class="items">Amazon Price: ₹154,899</div>
+                  <div class="items">Flipkart Price: ₹144,999</div>
+                </div>
+              </div>
+              <div class="card-desc">
+                <h2 id="product-heading">
+                  <%= prohead6 %>
+                </h2>
+                <h3 id="pro-brand"> <%= probrand6 %> </h3>
+                <div class="seller-type"> Sold by: <%= proseller6 %> </div>
+                <div class="rating"> <%= prorating6 %> <i class=" star fa-solid fa-star"></i></div>
+                <div class="consignee-qty"><%= minqty6 %> </div>
+                <form action="/product1" method="post">
+                <button id="pro-butt" type="submit" class="btn btn-outline-danger">Compare Details</button>
+              </form>
+              </div>     
+            </div>
+          </div> -->

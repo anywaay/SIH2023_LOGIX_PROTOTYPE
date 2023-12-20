@@ -1,0 +1,310 @@
+.navbar{
+    background-color: rgb(1, 33, 75);
+}
+.navbar-brand{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.2% auto 0.2% 2%;
+}
+.nav-link{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.navbar-nav{
+    padding-right: 2%;
+}
+#Accountid{ 
+    border: 4px solid rgba(241, 248, 249, 0.418);
+    border-radius: 10px;
+    justify-content: center;
+    color: #fff;
+    background-color: rgba(3, 72, 146, 0.217);
+}
+
+
+* {
+    font-family: Nunito, sans-serif;
+  }
+  
+  h5{
+    color: black;
+  }
+
+  .text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    line-height: 25px;
+  }
+  
+  .responsive-container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: flex-start;
+  }
+  
+  .responsive-container-block.bigContainer {
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    /* background-image: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb29.png"); */
+    background-image: url("/images/about.png");
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: cover;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    background-repeat: repeat-y;
+    /* background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat; */
+  }
+  
+  .responsive-container-block.Container {
+    max-width: 800px;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-top: 150px;
+    margin-right: auto;
+    margin-bottom: 150px;
+    margin-left: auto;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .text-blk.heading {
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 800;
+    margin-top: 100px;
+    margin-right: 0px;
+    margin-bottom: 60px;
+    margin-left: 0px;
+  }
+
+  .subHeading1 {
+    color: rgb(70, 70, 70);
+    /* text-align: left; */
+    align-items: left;
+    /* text-align: justify; */
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+  
+  .text-blk.subHeading {
+    text-align: center;
+    /* text-align: justify; */
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+  
+  .socialIcon {
+    margin-top: 30px;
+    width: 33px;
+    height: 33px;
+    transition-duration: 200ms;
+  }
+  .socialIcon:hover{
+    scale: 1.3;
+  }
+  
+  .social-icons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .social-icon {
+    margin: 0 50px 0 50px;
+  }
+  
+  .social-icon:hover {
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .text-blk.heading {
+      font-size: 55px;
+      line-height: 65px;
+    }
+  
+    .text-blk.subHeading {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  
+    .socialIcon {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .text-blk.subHeading {
+      line-height: 27px;
+    }
+  
+    .text-blk.heading {
+      font-size: 32px;
+      line-height: 40px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+      margin-left: 0px;
+    }
+  
+    .social-icon {
+      margin: 0 25px 0 25px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .responsive-container-block.bigContainer {
+      padding-top: 10px;
+      padding-right: 20px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+    }
+  
+    .text-blk.heading {
+      font-size: 45px;
+      line-height: 55px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+      margin-left: 0px;
+    }
+  
+    .text-blk.subHeading {
+      font-size: 14px;
+      line-height: 22px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 30px;
+      margin-left: 0px;
+    }
+  
+    .social-icons-container {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .text-blk.subHeading {
+      font-size: 16px;
+      line-height: 23px;
+    }
+  
+    .text-blk.heading {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  
+    .social-icon {
+      margin: 0 20px 0 20px;
+    }
+  }
+
+  /* footer */
+  /* Footer */
+
+  .row{
+    justify-content: space-between;
+}
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(1, 33, 75);
+  }
+  footer {
+    padding-top: 30px;
+    background-color: #292c2f;
+    color: #bbb;
+  }
+  
+  footer a {
+    /* color: #999; */
+    color: rgb(238, 236, 236);
+    text-decoration:none;
+  }
+  
+  footer a:hover, footer a:focus {
+    color: #c1c0c0;
+    text-decoration:none;
+    border-bottom:1px dotted #d8d5d5;
+  }
+  
+  footer .form-control {
+      background-color: #d6d7d9;
+      box-shadow: 0 1px 0 0 rgba(201, 200, 200, 0.1);
+      border: none;
+      resize: none;
+      color: #d1d2d2;
+      padding: 0.7em 1em;
+      margin-top: 2%;
+  }
+  .fa{
+      color: white;
+      scale: 1.2;
+  }
+  .fa-brands{
+      scale: 1.7;
+  }
+  .fa:hover{
+      color: #8f8f8f;
+  }
+  .btn-light{
+      margin-top: 2%;
+      background-color: #d6d7d9;
+  }
+  .btn-light:hover{
+      background-color: white;
+  }
+  .text-md-right{
+      color: white;
+  }
+  h5{
+      color: white;
+      margin-bottom: 5%;
+  }
+  .social-icon{
+      margin-left: 0%;
+      margin-bottom: 2%;
+      justify-content: center;
+      padding-bottom: 1%;
+  }
+  footer p{
+      color: white;
+  }

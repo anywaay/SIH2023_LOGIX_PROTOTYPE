@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SavvyShopper</title>
+  <link rel="icon" href="images/favicon2.ico">
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/6cd0737a04.js" crossorigin="anonymous"></script>
+  <!-- FontAwesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <!-- google fonts -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+
+  <link rel="stylesheet" href="css/seller_detail.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    
+    <a class="navbar-brand" href=" ">SavvyShopper</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+<div class="navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+    
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/product_details">Product Details</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#footer">Contact Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" id="Accountid" href="/login"> <i id="accountIcon" class= " <%= accounticon %> " > </i> <%= accountname %></a>
+      </li>
+    </ul>
+</div>
+</nav>
+
+<!-- Seller Details -->
+<div class="head">
+  All Seller Details for your Searched Product
+</div>
+
+
+<!-- Seller Description Tag -->
+<div class="sellerbar">
+  <div class="sellersname boxy">Sellers</div>
+  <div class="offeredprice box">Offer Price</div>
+  <div class="locations box">Location of Delhivery</div>
+  <div class="qtyavail box">Quantity Available</div>
+  <div class="minqty box">Min Quantity per Consignee</div>
+  <div class="sellertype box">Seller type</div>
+  <div class="origincont box">Origin Country</div>
+</div>
+<div class="sellers">
+  <div class="boxyy">
+    <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Seller </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+  <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Catalogue </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+    <div class="rating"> 4.0 - 4.5 <i class=" star fa-solid fa-star"></i> </div>
+  </div>
+  <div class="boxx">₹ 19,200</div>
+  <div class="boxx">State(s) - KARNATAKA, TAMIL NADU, JAMMU & KASHMIR, DELHI, MAHARASHTRA, GUJARAT, ANDHRA PRADESH, UTTAR PRADESH, KERALA, WEST BENGAL, HARYANA, CHANDIGARH, PUNJAB.</div>
+  <div class="boxx">208</div>
+  <div class="boxx">5</div>
+  <div class="boxx">Reseller</div>
+  <div class="boxx">India</div>
+</div>
+<div class="sellers">
+  <div class="boxyy">
+    <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Seller </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+  <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Catalogue </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+    <div class="rating"> 4.0 - 4.5 <i class=" star fa-solid fa-star"></i> </div>
+  </div>
+  <div class="boxx">₹ 49,599</div>
+  <div class="boxx">State(s) - TAMIL NADU, JAMMU & KASHMIR, PUNJAB.</div>
+  <div class="boxx">117</div>
+  <div class="boxx">1</div>
+  <div class="boxx">Reseller</div>
+  <div class="boxx">India</div>
+</div>
+<div class="sellers">
+  <div class="boxyy">
+    <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Seller </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+  <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Catalogue </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+    <div class="rating"> 4.0 - 4.5 <i class=" star fa-solid fa-star"></i> </div>
+  </div>
+  <div class="boxx">₹ 52,499</div>
+  <div class="boxx">State(s) - KARNATAKA, HARYANA, CHANDIGARH.</div>
+  <div class="boxx">506</div>
+  <div class="boxx">17</div>
+  <div class="boxx">Reseller</div>
+  <div class="boxx">India</div>
+</div>
+<div class="sellers">
+  <div class="boxyy">
+    <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Seller </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+  <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Catalogue </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+    <div class="rating"> 4.0 - 4.5 <i class=" star fa-solid fa-star"></i> </div>
+  </div>
+  <div class="boxx">₹ 29,599</div>
+  <div class="boxx">State(s) - DELHI, MAHARASHTRA.</div>
+  <div class="boxx">208</div>
+  <div class="boxx">5</div>
+  <div class="boxx">Reseller</div>
+  <div class="boxx">India</div>
+</div>
+<div class="sellers">
+  <div class="boxyy">
+    <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Seller </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+  <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Catalogue </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+    <div class="rating"> 4.0 - 4.5 <i class=" star fa-solid fa-star"></i> </div>
+  </div>
+  <div class="boxx">₹ 39,500</div>
+  <div class="boxx">State(s) -JAMMU & KASHMIR, DELHI, UTTAR PRADESH.</div>
+  <div class="boxx">208</div>
+  <div class="boxx">5</div>
+  <div class="boxx">Reseller</div>
+  <div class="boxx">India</div>
+</div>
+<div class="sellers">
+  <div class="boxyy">
+    <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Seller </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+  <div class="flex-oem">
+    <h6 id="sellerveri">OEM Verified Catalogue </h6>
+    <i class="fa-solid fa-circle-check correct"></i>
+  </div>
+    <div class="rating"> 4.0 - 4.5 <i class=" star fa-solid fa-star"></i> </div>
+  </div>
+  <div class="boxx">₹ 34,399</div>
+  <div class="boxx">State(s) - GUJARAT, WEST BENGAL, HARYANA.</div>
+  <div class="boxx">134</div>
+  <div class="boxx">2</div>
+  <div class="boxx">Reseller</div>
+  <div class="boxx">India</div>
+</div>
+
+
+<footer class="footer" id="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-5">
+              <h5>&copy; 2023 ShavvyShopper, Inc. All rights reserved.</h5>
+              <div class="row">
+                  <div class="col-4">
+                      <ul class="list-unstyled">
+                          <li><a href="/">Home</a></li>
+                          <li><a href="/#testimonials">Reviews</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-4">
+                      <ul class="list-unstyled">
+                          <li><a href="/about">About Us</a></li>
+                          <li><a href="/#pricing">Pricing</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-4">
+                    <ul class="list-unstyled">
+                        <li><a href="/#e-tender-sites">E-Tender Sites</a></li>
+                    </ul>
+                </div>
+              </div>
+              <br>
+          </div>
+
+          <div class="col-md-5">
+            <h5 class="text-md-right">Contact Us</h5>
+              <form>
+                <p>Message Your query at our mail below and directly contact us at <a href="mailto:shavvyshopper@gmail.com">Shavvyshopper@gmail.com</a>.</p>
+              </form>
+          </div>
+          <ul class="nav social-icon border-bottom">
+            <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-brands fa-linkedin"></i></a></li>
+            <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+            <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+        </ul>
+      </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <button onclick="toggleDiv()">Toggle Division</button>
+        <div id="myDiv" class="hidden">
+             <!-- Your content goes here -->
+            <p>This is the content of the hidden division.</p>
+    </div>
+
+  <script>
+    function toggleDiv() {
+      var div = document.getElementById('myDiv');
+      if (div.style.display === 'none') {
+        div.style.display = 'block';
+      } else {
+        div.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
