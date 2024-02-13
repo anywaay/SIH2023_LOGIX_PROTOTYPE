@@ -28,7 +28,7 @@ The solution provided by this project involves the development of a Node.js web 
 2. **Install Dependencies:**
 
     ```
-    cd price-comparison-web-app
+    cd SIH2023_LOGIX_PROTOTYPE
     npm install
     ```
 
