@@ -22,7 +22,7 @@ The solution provided by this project involves the development of a Node.js web 
 1. Clone the repository to your local machine:
 
     ```
-    git clone https://github.com/anywaay/nike-clone-react-app.git
+    git clone https://github.com/anywaay/SIH2023_LOGIX_PROTOTYPE.git
     ```
 
 2. **Install Dependencies:**
