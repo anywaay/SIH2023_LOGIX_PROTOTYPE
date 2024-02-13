@@ -1,4 +1,4 @@
-# Price Comparison Web App for GeM Portal and Other E-Marketplaces
+# Price Comparison Web App for GeM Portal and Other E-Marketplaces (SIH2023_PSID-1360)
 
 This project is a web application developed as a solution for the problem statement titled "Price comparison website for products on GeM portal with other e-marketplaces" in the Smart India Hackathon 2023. The project won the competition and aims to provide a convenient platform for users to compare prices and specifications of products listed on the Government e-Marketplace (GeM) with those available on other popular e-marketplaces such as Flipkart, eBay, Amazon, Alibaba, etc. 
 
