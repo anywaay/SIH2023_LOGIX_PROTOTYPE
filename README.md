@@ -34,16 +34,24 @@ The solution provided by this project involves the development of a Node.js web 
 - **Cost Saving:** By comparing prices across multiple platforms, users can identify the best deals and potentially save costs on their purchases.
 
 ## Setup Instructions
+1. Clone the repository to your local machine:
 
-1. **Clone the Repository:** 
-    git clone https://github.com/your_username/price-comparison-web-app.git
+    ```
+    [git clone https://github.com/anywaay/nike-clone-react-app.git](https://github.com/anywaay/SIH2023_LOGIX_PROTOTYPE.git)
+    ```
 
 2. **Install Dependencies:**
+
+    ```
     cd price-comparison-web-app
     npm install
-3. **Run the Application:**
-    npm start
+    ```
 
+3. **Install Dependencies:**
+
+    ```
+    node app.js
+    ```
 
 4. **Access the Application:**
 Open a web browser and navigate to `http://localhost:3000` to access the web application.
