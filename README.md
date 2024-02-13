@@ -1,18 +1,3 @@
-# SIH-2023_LogiX
-=======
-# LogiX
-
-## SavvyShopper (Website)
-
-Price Comparison WebApp for comparing price of products listed on Gem Portal with other E-MarketPlace Websites!
-
-# Prototype Video and Photos Link
-https://drive.google.com/drive/folders/1H0k5n_lTB3op3dv5MPkz3vkUlvW5klMJ?usp=drive_link
-
-
-
-
-
 # Price Comparison Web App for GeM Portal and Other E-Marketplaces
 
 This project is a web application developed as a solution for the problem statement titled "Price comparison website for products on GeM portal with other e-marketplaces" in the Smart India Hackathon 2023. The project won the competition and aims to provide a convenient platform for users to compare prices and specifications of products listed on the Government e-Marketplace (GeM) with those available on other popular e-marketplaces such as Flipkart, eBay, Amazon, Alibaba, etc. 
@@ -37,7 +22,7 @@ The solution provided by this project involves the development of a Node.js web 
 1. Clone the repository to your local machine:
 
     ```
-    [git clone https://github.com/anywaay/nike-clone-react-app.git](https://github.com/anywaay/SIH2023_LOGIX_PROTOTYPE.git)
+    git clone https://github.com/anywaay/nike-clone-react-app.git
     ```
 
 2. **Install Dependencies:**
@@ -77,6 +62,10 @@ Open a web browser and navigate to `http://localhost:3000` to access the web app
 
 Contributions to the project are welcome! If you have any suggestions, enhancements, or bug fixes, feel free to submit a pull request or open an issue on the GitHub repository.
 
+
 ## Acknowledgements
 
 Special thanks to the organizers of the Smart India Hackathon 2023 for providing the platform to showcase innovative solutions to real-world problems. Additionally, gratitude to all contributors and supporters of this project for their valuable input and efforts.
+
+# Prototype Video and Photos Link
+https://drive.google.com/drive/folders/1H0k5n_lTB3op3dv5MPkz3vkUlvW5klMJ?usp=drive_link
